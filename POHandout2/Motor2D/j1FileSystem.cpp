@@ -1,6 +1,5 @@
-#include "p2Defs.h"
+
 #include "j1App.h"
-#include "p2Log.h"
 #include "j1FileSystem.h"
 #include "PhysFS/include/physfs.h"
 #include "SDL/include/SDL.h"
@@ -101,11 +100,10 @@ unsigned int j1FileSystem::Load(const char* file, char** buffer) const
 
 		if(size > 0)
 		{
-			*buffer = new char[(uint)size];
+			*buffer = new char[(unsigned int)size];
 			PHYSFS_sint64 readed = PHYSFS_read(fs_file, *buffer, 1, (PHYSFS_sint32)size);
 			if(readed != size)
 			{
-				LOG("File System error while reading from file %s: %s\n", file, PHYSFS_getLastError());
 				RELEASE(buffer);
 			}
 			else

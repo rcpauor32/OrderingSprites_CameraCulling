@@ -6,16 +6,12 @@
 #ifndef __j1MODULE_H__
 #define __j1MODULE_H__
 
-#include "p2SString.h"
-#include "p2DynArray.h"
+#include <string.h>
+#include <deque>
 #include "PugiXml\src\pugixml.hpp"
 
 class j1App;
 class UIElement;
-struct Command;
-enum GuiEvents;
-struct CVar;
-
 
 class j1Module
 {
@@ -92,7 +88,7 @@ public:
 
 public:
 
-	p2SString	name;
+	String	name;
 	bool		active;
 
 };

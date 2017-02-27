@@ -1,9 +1,6 @@
-#include "p2Defs.h"
-#include "p2Log.h"
 #include "j1App.h"
 #include "j1Input.h"
 #include "j1Textures.h"
-#include "j1Audio.h"
 #include "j1Render.h"
 #include "j1Window.h"
 #include "j1Map.h"
@@ -24,7 +21,6 @@ j1Scene::~j1Scene()
 // Called before render is available
 bool j1Scene::Awake()
 {
-	LOG("Loading Scene");
 	bool ret = true;
 
 	return ret;
@@ -111,7 +107,5 @@ bool j1Scene::PostUpdate()
 // Called before quitting
 bool j1Scene::CleanUp()
 {
-	LOG("Freeing scene");
-
 	return true;
 }
